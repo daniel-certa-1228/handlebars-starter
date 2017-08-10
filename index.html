@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Handlebars</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<h1>Templates Within HTML</h1>
+
+		<script type="text/x-handlebars-template" id="handlebars-starter">
+			<div>
+				My name is {{name}}.<br>
+				I am an {{occupation}}.
+			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="hbs-language">
+			<div>
+				We are learning {{language}} and it is {{adjective}}.  {{happy}}!
+			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="hbs-devs">
+			<div>
+				This is a demo for {{website.name}}.<br>
+				{{#each names}}
+				{{this}}
+					{{@index}} I am a {{../occupation}},
+					My name is {{firstName}}.<br>
+				{{/each}}
+
+				{{#if cities}}
+					<h3>The cities are available.</h3>
+					{{#each cities}}
+						{{this}}<br>
+					{{/each}}
+				{{else}}
+					<h3>The cities are not available.</h3>
+				{{/if}}
+			</div>
+		</script>
+
+		<script type="text/x-handlebars-template" id="hbs-voter">
+			<div>
+				{{#each person}}
+					{{name}} {{voterStatus year}}<br>
+				{{/each}}
+			</div>
+		</script>
+
+
+		<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/node_modules/handlebars/dist/handlebars.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
